@@ -18,7 +18,7 @@ namespace EntityClasses
         public DateTime ProjectPed { get; set; }
         public int ProjectDuration { get; set; }
         public string ProjectFilePath { get; set; }
-        public bool ProjectStatus { get; set; }
+        public string ProjectStatus { get; set; }
         public string ProjectPriority { get; set; } 
         public string ProjectManager { get; set; }
 

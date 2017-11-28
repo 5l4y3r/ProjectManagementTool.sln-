@@ -42,7 +42,7 @@ namespace ProjectManagementTool
                 string deg = userLogin.UserDesignation;
                 MessageBox.Show(deg+" logged In Successfully");
                 Hide();
-                AddOrUpdateUser a1 = new AddOrUpdateUser();
+                AddOrUpdateProject a1= new AddOrUpdateProject(userLogin.UserName);
                 a1.Show();
             }
             else

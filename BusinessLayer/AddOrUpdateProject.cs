@@ -10,7 +10,7 @@ namespace BusinessLayer
 
     public class AddOrUpdateProject
     {
-        public void AddProject(string s1, string s2, string s3, string s4, string s5, DateTime s6, DateTime s7, int s8, string s9, bool s10)
+        public static void AddProject(string s1, string s2, string s3, string s4, string s5, DateTime s6, DateTime s7, int s8, string s9, string s10)
         {
             var context = new PmtContext();
 

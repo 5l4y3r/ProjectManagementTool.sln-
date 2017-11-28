@@ -12,9 +12,12 @@ namespace ProjectManagementTool
 {
     public partial class AddOrUpdateProject : Form
     {
-        public AddOrUpdateProject()
+       public static string managerName;
+        public AddOrUpdateProject(string s)
         {
+            managerName = s;
             InitializeComponent();
+            
         }
 
         private void brnBrowse_Click(object sender, EventArgs e)
@@ -91,10 +94,15 @@ namespace ProjectManagementTool
             {
                 s9 = rbtnCanceled.Text; }
 
-            var s10 = s1.Split(Convert.ToChar(" ")).Select(y => y[0]).ToList();
+            string s10 = "";
 
+            foreach (var part in s1.Split(' '))
+            {
+                s10 += part.Substring(0, 1);
+            }
+            MessageBox.Show(s10);
 
-           // BusinessLayer.AddOrUpdateProject
+            BusinessLayer.AddOrUpdateProject.AddProject(s1,s10,s3,managerName,s3,s4,s5,s6,s8,s9);
 
         }
     }

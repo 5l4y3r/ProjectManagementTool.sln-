@@ -54,6 +54,10 @@
     <Compile Include="Migrations\201711281658186_Initialized1.Designer.cs">
       <DependentUpon>201711281658186_Initialized1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711282102008_Inialization2.cs" />
+    <Compile Include="Migrations\201711282102008_Inialization2.Designer.cs">
+      <DependentUpon>201711282102008_Inialization2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PMTContext.cs" />
     <Compile Include="Project.cs" />
@@ -69,6 +73,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201711281658186_Initialized1.resx">
       <DependentUpon>201711281658186_Initialized1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711282102008_Inialization2.resx">
+      <DependentUpon>201711282102008_Inialization2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
