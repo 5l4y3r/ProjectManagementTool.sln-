@@ -35,17 +35,8 @@ namespace ProjectManagementTool
             }
             string s5 = listBox1.Text;
 
-            var context = new PmtContext();
+            BusinessLayer.AddOrUpdateUser.AddUser(s1,s2,s3,s4,s5);
 
-            context.Users.Add(new User()
-            {
-                UserName = s1,
-                UserEmail = s2,
-                UserPassword = s3,
-                UserStatus = s4,
-                UserDesignation = s5
-            });
-            context.SaveChanges();
             SetGridView();
         }
 
