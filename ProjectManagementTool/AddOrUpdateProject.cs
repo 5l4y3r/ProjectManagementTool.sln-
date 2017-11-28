@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +23,15 @@ namespace ProjectManagementTool
 
         private void brnBrowse_Click(object sender, EventArgs e)
         {
-
+            DialogResult button1_Click = folderBrowserDialog1.ShowDialog();
+            if (button1_Click == DialogResult.OK)
+            {
+                string[] files = Directory.GetFiles(folderBrowserDialog1.SelectedPath);
+                MessageBox.Show("Files found: " + files.Length.ToString(), "Message");
+            }
+            string path;
+            path = folderBrowserDialog1.SelectedPath; 
+            txtUpload.Text = path;
         }
 
         private void rbtnNotStarted_CheckedChanged(object sender, EventArgs e)
@@ -102,7 +111,7 @@ namespace ProjectManagementTool
             }
             MessageBox.Show(s10);
 
-            BusinessLayer.AddOrUpdateProject.AddProject(s1,s10,s3,managerName,s3,s4,s5,s6,s8,s9);
+            BusinessLayer.AddOrUpdateProject.AddProject(s1,s10,s3,managerName,s7,s4,s5,s6,s8,s9);
 
         }
     }

@@ -52,6 +52,7 @@
             this.txtPED = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.txtPriority = new System.Windows.Forms.ListBox();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.SuspendLayout();
             // 
             // label1
@@ -346,5 +347,6 @@
         private System.Windows.Forms.DateTimePicker txtPED;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ListBox txtPriority;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
     }
 }
