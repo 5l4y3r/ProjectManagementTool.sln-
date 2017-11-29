@@ -33,16 +33,21 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cboxSelectProject = new System.Windows.Forms.ComboBox();
-            this.cboxSelectResourcePerson = new System.Windows.Forms.ComboBox();
             this.projectBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cboxSelectResourcePerson = new System.Windows.Forms.ComboBox();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnSave = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.resourcePersonBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.resourcePersonProjectNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.resourcePersonNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.resourcePersonDesignationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.resourcePersonBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -86,6 +91,10 @@
             this.cboxSelectProject.TabIndex = 9;
             this.cboxSelectProject.ValueMember = "ProjectName";
             // 
+            // projectBindingSource
+            // 
+            this.projectBindingSource.DataSource = typeof(EntityClasses.Project);
+            // 
             // cboxSelectResourcePerson
             // 
             this.cboxSelectResourcePerson.DataSource = this.userBindingSource;
@@ -96,10 +105,6 @@
             this.cboxSelectResourcePerson.Size = new System.Drawing.Size(230, 21);
             this.cboxSelectResourcePerson.TabIndex = 10;
             this.cboxSelectResourcePerson.ValueMember = "UserName";
-            // 
-            // projectBindingSource
-            // 
-            this.projectBindingSource.DataSource = typeof(EntityClasses.Project);
             // 
             // userBindingSource
             // 
@@ -113,13 +118,20 @@
             this.btnSave.TabIndex = 12;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 3);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.resourcePersonProjectNameDataGridViewTextBoxColumn,
+            this.resourcePersonNameDataGridViewTextBoxColumn,
+            this.resourcePersonDesignationDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.resourcePersonBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(71, 3);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(421, 215);
+            this.dataGridView1.Size = new System.Drawing.Size(344, 215);
             this.dataGridView1.TabIndex = 0;
             // 
             // panel1
@@ -127,8 +139,30 @@
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Location = new System.Drawing.Point(35, 186);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(437, 235);
+            this.panel1.Size = new System.Drawing.Size(502, 235);
             this.panel1.TabIndex = 11;
+            // 
+            // resourcePersonBindingSource
+            // 
+            this.resourcePersonBindingSource.DataSource = typeof(EntityClasses.ResourcePerson);
+            // 
+            // resourcePersonProjectNameDataGridViewTextBoxColumn
+            // 
+            this.resourcePersonProjectNameDataGridViewTextBoxColumn.DataPropertyName = "ResourcePersonProjectName";
+            this.resourcePersonProjectNameDataGridViewTextBoxColumn.HeaderText = "Project Name";
+            this.resourcePersonProjectNameDataGridViewTextBoxColumn.Name = "resourcePersonProjectNameDataGridViewTextBoxColumn";
+            // 
+            // resourcePersonNameDataGridViewTextBoxColumn
+            // 
+            this.resourcePersonNameDataGridViewTextBoxColumn.DataPropertyName = "ResourcePersonName";
+            this.resourcePersonNameDataGridViewTextBoxColumn.HeaderText = "Resource Person";
+            this.resourcePersonNameDataGridViewTextBoxColumn.Name = "resourcePersonNameDataGridViewTextBoxColumn";
+            // 
+            // resourcePersonDesignationDataGridViewTextBoxColumn
+            // 
+            this.resourcePersonDesignationDataGridViewTextBoxColumn.DataPropertyName = "ResourcePersonDesignation";
+            this.resourcePersonDesignationDataGridViewTextBoxColumn.HeaderText = "Designation";
+            this.resourcePersonDesignationDataGridViewTextBoxColumn.Name = "resourcePersonDesignationDataGridViewTextBoxColumn";
             // 
             // AssignResourcePerson
             // 
@@ -148,6 +182,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.resourcePersonBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,5 +200,9 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn resourcePersonProjectNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn resourcePersonNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn resourcePersonDesignationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource resourcePersonBindingSource;
     }
 }
