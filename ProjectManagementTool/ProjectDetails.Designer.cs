@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtUpload = new System.Windows.Forms.TextBox();
+            this.components = new System.ComponentModel.Container();
             this.txtDuration = new System.Windows.Forms.TextBox();
+            this.txtStatus = new System.Windows.Forms.TextBox();
             this.txtPED = new System.Windows.Forms.TextBox();
-            this.txtPSD = new System.Windows.Forms.TextBox();
+            this.txtDesc = new System.Windows.Forms.TextBox();
             this.txtCName = new System.Windows.Forms.TextBox();
             this.txtPName = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -42,44 +43,55 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPSD = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tasksNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tasksAssignedUserDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priorityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dueDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.taskBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txtCreateTask = new System.Windows.Forms.LinkLabel();
+            this.projectBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.taskBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtUpload
-            // 
-            this.txtUpload.Location = new System.Drawing.Point(129, 189);
-            this.txtUpload.Name = "txtUpload";
-            this.txtUpload.Size = new System.Drawing.Size(219, 20);
-            this.txtUpload.TabIndex = 29;
             // 
             // txtDuration
             // 
-            this.txtDuration.Location = new System.Drawing.Point(129, 163);
+            this.txtDuration.Location = new System.Drawing.Point(129, 249);
             this.txtDuration.Name = "txtDuration";
-            this.txtDuration.Size = new System.Drawing.Size(219, 20);
-            this.txtDuration.TabIndex = 28;
+            this.txtDuration.Size = new System.Drawing.Size(141, 20);
+            this.txtDuration.TabIndex = 29;
+            // 
+            // txtStatus
+            // 
+            this.txtStatus.Location = new System.Drawing.Point(129, 163);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.Size = new System.Drawing.Size(219, 20);
+            this.txtStatus.TabIndex = 28;
             // 
             // txtPED
             // 
-            this.txtPED.Location = new System.Drawing.Point(129, 245);
+            this.txtPED.Location = new System.Drawing.Point(129, 219);
             this.txtPED.Name = "txtPED";
-            this.txtPED.Size = new System.Drawing.Size(105, 20);
+            this.txtPED.Size = new System.Drawing.Size(219, 20);
             this.txtPED.TabIndex = 27;
             // 
-            // txtPSD
+            // txtDesc
             // 
-            this.txtPSD.Location = new System.Drawing.Point(129, 108);
-            this.txtPSD.Multiline = true;
-            this.txtPSD.Name = "txtPSD";
-            this.txtPSD.Size = new System.Drawing.Size(219, 46);
-            this.txtPSD.TabIndex = 26;
+            this.txtDesc.Location = new System.Drawing.Point(129, 108);
+            this.txtDesc.Multiline = true;
+            this.txtDesc.Name = "txtDesc";
+            this.txtDesc.Size = new System.Drawing.Size(219, 46);
+            this.txtDesc.TabIndex = 26;
             // 
             // txtCName
             // 
@@ -101,9 +113,9 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(12, 300);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(101, 16);
+            this.label9.Size = new System.Drawing.Size(113, 16);
             this.label9.TabIndex = 22;
-            this.label9.Text = "Uploaded Files";
+            this.label9.Text = "Files Source Path";
             // 
             // label7
             // 
@@ -175,12 +187,12 @@
             this.label1.TabIndex = 30;
             this.label1.Text = "Project Details";
             // 
-            // textBox2
+            // txtPSD
             // 
-            this.textBox2.Location = new System.Drawing.Point(129, 219);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(219, 20);
-            this.textBox2.TabIndex = 32;
+            this.txtPSD.Location = new System.Drawing.Point(129, 190);
+            this.txtPSD.Name = "txtPSD";
+            this.txtPSD.Size = new System.Drawing.Size(219, 20);
+            this.txtPSD.TabIndex = 32;
             // 
             // label8
             // 
@@ -204,11 +216,14 @@
             // 
             // listBox1
             // 
+            this.listBox1.DataSource = this.projectBindingSource;
+            this.listBox1.DisplayMember = "ProjectFilePath";
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(129, 282);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(219, 69);
             this.listBox1.TabIndex = 35;
+            this.listBox1.ValueMember = "ProjectFilePath";
             // 
             // listBox2
             // 
@@ -228,42 +243,95 @@
             this.label11.TabIndex = 37;
             this.label11.Text = "Task List(Total Task:0)";
             // 
-            // label12
+            // panel1
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(558, 50);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(93, 16);
-            this.label12.TabIndex = 38;
-            this.label12.Text = "Create Task";
+            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Location = new System.Drawing.Point(366, 83);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(462, 217);
+            this.panel1.TabIndex = 39;
             // 
-            // listBox3
+            // dataGridView1
             // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.Location = new System.Drawing.Point(415, 78);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(268, 134);
-            this.listBox3.TabIndex = 39;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tasksNameDataGridViewTextBoxColumn,
+            this.tasksAssignedUserDataGridViewTextBoxColumn,
+            this.priorityDataGridViewTextBoxColumn,
+            this.dueDateDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.taskBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(446, 211);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // tasksNameDataGridViewTextBoxColumn
+            // 
+            this.tasksNameDataGridViewTextBoxColumn.DataPropertyName = "TasksName";
+            this.tasksNameDataGridViewTextBoxColumn.HeaderText = "Tasks Name";
+            this.tasksNameDataGridViewTextBoxColumn.Name = "tasksNameDataGridViewTextBoxColumn";
+            // 
+            // tasksAssignedUserDataGridViewTextBoxColumn
+            // 
+            this.tasksAssignedUserDataGridViewTextBoxColumn.DataPropertyName = "TasksAssignedUser";
+            this.tasksAssignedUserDataGridViewTextBoxColumn.HeaderText = "Assigned User";
+            this.tasksAssignedUserDataGridViewTextBoxColumn.Name = "tasksAssignedUserDataGridViewTextBoxColumn";
+            // 
+            // priorityDataGridViewTextBoxColumn
+            // 
+            this.priorityDataGridViewTextBoxColumn.DataPropertyName = "priority";
+            this.priorityDataGridViewTextBoxColumn.HeaderText = "priority";
+            this.priorityDataGridViewTextBoxColumn.Name = "priorityDataGridViewTextBoxColumn";
+            // 
+            // dueDateDataGridViewTextBoxColumn
+            // 
+            this.dueDateDataGridViewTextBoxColumn.DataPropertyName = "dueDate";
+            this.dueDateDataGridViewTextBoxColumn.HeaderText = "Due Date";
+            this.dueDateDataGridViewTextBoxColumn.Name = "dueDateDataGridViewTextBoxColumn";
+            // 
+            // taskBindingSource
+            // 
+            this.taskBindingSource.DataSource = typeof(EntityClasses.Task);
+            this.taskBindingSource.CurrentChanged += new System.EventHandler(this.taskBindingSource_CurrentChanged);
+            // 
+            // txtCreateTask
+            // 
+            this.txtCreateTask.ActiveLinkColor = System.Drawing.Color.Black;
+            this.txtCreateTask.AutoSize = true;
+            this.txtCreateTask.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCreateTask.LinkColor = System.Drawing.Color.Black;
+            this.txtCreateTask.Location = new System.Drawing.Point(650, 49);
+            this.txtCreateTask.Name = "txtCreateTask";
+            this.txtCreateTask.Size = new System.Drawing.Size(96, 16);
+            this.txtCreateTask.TabIndex = 40;
+            this.txtCreateTask.TabStop = true;
+            this.txtCreateTask.Text = "Create Task";
+            this.txtCreateTask.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.txtCreateTask_LinkClicked);
+            // 
+            // projectBindingSource
+            // 
+            this.projectBindingSource.DataSource = typeof(EntityClasses.Project);
+            this.projectBindingSource.CurrentChanged += new System.EventHandler(this.projectBindingSource_CurrentChanged);
             // 
             // ProjectDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(695, 436);
-            this.Controls.Add(this.listBox3);
-            this.Controls.Add(this.label12);
+            this.ClientSize = new System.Drawing.Size(840, 436);
+            this.Controls.Add(this.txtCreateTask);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtUpload);
-            this.Controls.Add(this.txtDuration);
-            this.Controls.Add(this.txtPED);
             this.Controls.Add(this.txtPSD);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtDuration);
+            this.Controls.Add(this.txtStatus);
+            this.Controls.Add(this.txtPED);
+            this.Controls.Add(this.txtDesc);
             this.Controls.Add(this.txtCName);
             this.Controls.Add(this.txtPName);
             this.Controls.Add(this.label9);
@@ -275,6 +343,10 @@
             this.Controls.Add(this.label2);
             this.Name = "ProjectDetails";
             this.Text = "ProjectDetails";
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.taskBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -282,10 +354,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtUpload;
         private System.Windows.Forms.TextBox txtDuration;
+        private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.TextBox txtPED;
-        private System.Windows.Forms.TextBox txtPSD;
+        private System.Windows.Forms.TextBox txtDesc;
         private System.Windows.Forms.TextBox txtCName;
         private System.Windows.Forms.TextBox txtPName;
         private System.Windows.Forms.Label label9;
@@ -296,13 +368,20 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPSD;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tasksNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tasksAssignedUserDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priorityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dueDateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource taskBindingSource;
+        private System.Windows.Forms.LinkLabel txtCreateTask;
+        private System.Windows.Forms.BindingSource projectBindingSource;
     }
 }

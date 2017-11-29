@@ -150,6 +150,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\EntityClasses.Project.datasource" />
     <None Include="Properties\DataSources\EntityClasses.ResourcePerson.datasource" />
+    <None Include="Properties\DataSources\EntityClasses.Task.datasource" />
     <None Include="Properties\DataSources\EntityClasses.User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

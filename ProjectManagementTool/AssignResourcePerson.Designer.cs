@@ -38,16 +38,16 @@
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnSave = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.resourcePersonBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.resourcePersonProjectNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.resourcePersonNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.resourcePersonDesignationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.resourcePersonBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resourcePersonBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -134,18 +134,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(344, 215);
             this.dataGridView1.TabIndex = 0;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Location = new System.Drawing.Point(35, 186);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(502, 235);
-            this.panel1.TabIndex = 11;
-            // 
-            // resourcePersonBindingSource
-            // 
-            this.resourcePersonBindingSource.DataSource = typeof(EntityClasses.ResourcePerson);
-            // 
             // resourcePersonProjectNameDataGridViewTextBoxColumn
             // 
             this.resourcePersonProjectNameDataGridViewTextBoxColumn.DataPropertyName = "ResourcePersonProjectName";
@@ -164,6 +152,18 @@
             this.resourcePersonDesignationDataGridViewTextBoxColumn.HeaderText = "Designation";
             this.resourcePersonDesignationDataGridViewTextBoxColumn.Name = "resourcePersonDesignationDataGridViewTextBoxColumn";
             // 
+            // resourcePersonBindingSource
+            // 
+            this.resourcePersonBindingSource.DataSource = typeof(EntityClasses.ResourcePerson);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Location = new System.Drawing.Point(35, 186);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(502, 235);
+            this.panel1.TabIndex = 11;
+            // 
             // AssignResourcePerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -181,8 +181,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.resourcePersonBindingSource)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

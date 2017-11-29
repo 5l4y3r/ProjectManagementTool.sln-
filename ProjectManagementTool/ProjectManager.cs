@@ -39,11 +39,6 @@ namespace ProjectManagementTool
             a1.Show();
         }
 
-        private void btnTask_Click(object sender, EventArgs e)
-        {
-            Hide();
-            AddOrUpdateTask a1= new AddOrUpdateTask();
-            a1.Show();
-        }
+        
     }
 }

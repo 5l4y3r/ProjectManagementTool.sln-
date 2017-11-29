@@ -30,7 +30,6 @@
         {
             this.btnProject = new System.Windows.Forms.Button();
             this.btnUser = new System.Windows.Forms.Button();
-            this.btnTask = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -46,23 +45,13 @@
             // 
             // btnUser
             // 
-            this.btnUser.Location = new System.Drawing.Point(173, 144);
+            this.btnUser.Location = new System.Drawing.Point(173, 160);
             this.btnUser.Name = "btnUser";
             this.btnUser.Size = new System.Drawing.Size(185, 61);
             this.btnUser.TabIndex = 1;
             this.btnUser.Text = "Assign resource Person";
             this.btnUser.UseVisualStyleBackColor = true;
             this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
-            // 
-            // btnTask
-            // 
-            this.btnTask.Location = new System.Drawing.Point(170, 233);
-            this.btnTask.Name = "btnTask";
-            this.btnTask.Size = new System.Drawing.Size(185, 61);
-            this.btnTask.TabIndex = 2;
-            this.btnTask.Text = "Add Task";
-            this.btnTask.UseVisualStyleBackColor = true;
-            this.btnTask.Click += new System.EventHandler(this.btnTask_Click);
             // 
             // label1
             // 
@@ -79,7 +68,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(524, 341);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnTask);
             this.Controls.Add(this.btnUser);
             this.Controls.Add(this.btnProject);
             this.Name = "ProjectManager";
@@ -93,7 +81,6 @@
 
         private System.Windows.Forms.Button btnProject;
         private System.Windows.Forms.Button btnUser;
-        private System.Windows.Forms.Button btnTask;
         private System.Windows.Forms.Label label1;
     }
 }
