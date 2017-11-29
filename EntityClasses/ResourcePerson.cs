@@ -12,6 +12,7 @@ namespace EntityClasses
 
         public int? Id { get; set; }
         public string ResourcePersonName { get; set; }
+        public string ResourcePersonDesignation { get; set; }
         public string ResourcePersonProjectName { get; set; }
     }
 }

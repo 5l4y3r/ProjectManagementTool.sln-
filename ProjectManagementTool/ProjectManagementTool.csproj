@@ -139,6 +139,7 @@
       <DependentUpon>ViewProjects.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\EntityClasses.Project.datasource" />
     <None Include="Properties\DataSources\EntityClasses.User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

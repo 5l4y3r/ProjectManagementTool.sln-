@@ -28,13 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cboxSelectProject = new System.Windows.Forms.ComboBox();
             this.cboxSelectResourcePerson = new System.Windows.Forms.ComboBox();
+            this.projectBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnSave = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,43 +77,65 @@
             // 
             // cboxSelectProject
             // 
+            this.cboxSelectProject.DataSource = this.projectBindingSource;
+            this.cboxSelectProject.DisplayMember = "ProjectName";
             this.cboxSelectProject.FormattingEnabled = true;
             this.cboxSelectProject.Location = new System.Drawing.Point(220, 74);
             this.cboxSelectProject.Name = "cboxSelectProject";
             this.cboxSelectProject.Size = new System.Drawing.Size(230, 21);
             this.cboxSelectProject.TabIndex = 9;
+            this.cboxSelectProject.ValueMember = "ProjectName";
             // 
             // cboxSelectResourcePerson
             // 
+            this.cboxSelectResourcePerson.DataSource = this.userBindingSource;
+            this.cboxSelectResourcePerson.DisplayMember = "UserName";
             this.cboxSelectResourcePerson.FormattingEnabled = true;
             this.cboxSelectResourcePerson.Location = new System.Drawing.Point(220, 111);
             this.cboxSelectResourcePerson.Name = "cboxSelectResourcePerson";
             this.cboxSelectResourcePerson.Size = new System.Drawing.Size(230, 21);
             this.cboxSelectResourcePerson.TabIndex = 10;
+            this.cboxSelectResourcePerson.ValueMember = "UserName";
+            // 
+            // projectBindingSource
+            // 
+            this.projectBindingSource.DataSource = typeof(EntityClasses.Project);
+            // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataSource = typeof(EntityClasses.User);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(375, 137);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 12;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(13, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(421, 215);
+            this.dataGridView1.TabIndex = 0;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(35, 166);
+            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Location = new System.Drawing.Point(35, 186);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(490, 263);
+            this.panel1.Size = new System.Drawing.Size(437, 235);
             this.panel1.TabIndex = 11;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(21, 115);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(323, 33);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "Edit after DB Done--> ";
             // 
             // AssignResourcePerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(582, 441);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.cboxSelectResourcePerson);
             this.Controls.Add(this.cboxSelectProject);
@@ -115,8 +144,10 @@
             this.Controls.Add(this.label1);
             this.Name = "AssignResourcePerson";
             this.Text = "Assign Resource Person";
+            ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,7 +160,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cboxSelectProject;
         private System.Windows.Forms.ComboBox cboxSelectResourcePerson;
+        private System.Windows.Forms.BindingSource projectBindingSource;
+        private System.Windows.Forms.BindingSource userBindingSource;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label3;
     }
 }
