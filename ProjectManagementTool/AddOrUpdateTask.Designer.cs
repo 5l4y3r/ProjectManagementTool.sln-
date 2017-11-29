@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.cboxSelectResourcePerson = new System.Windows.Forms.ComboBox();
             this.cboxSelectProject = new System.Windows.Forms.ComboBox();
@@ -40,6 +41,10 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.projectBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -54,19 +59,25 @@
             // 
             // cboxSelectResourcePerson
             // 
+            this.cboxSelectResourcePerson.DataSource = this.userBindingSource;
+            this.cboxSelectResourcePerson.DisplayMember = "UserName";
             this.cboxSelectResourcePerson.FormattingEnabled = true;
             this.cboxSelectResourcePerson.Location = new System.Drawing.Point(191, 106);
             this.cboxSelectResourcePerson.Name = "cboxSelectResourcePerson";
             this.cboxSelectResourcePerson.Size = new System.Drawing.Size(230, 21);
             this.cboxSelectResourcePerson.TabIndex = 14;
+            this.cboxSelectResourcePerson.ValueMember = "UserName";
             // 
             // cboxSelectProject
             // 
+            this.cboxSelectProject.DataSource = this.projectBindingSource;
+            this.cboxSelectProject.DisplayMember = "ProjectName";
             this.cboxSelectProject.FormattingEnabled = true;
             this.cboxSelectProject.Location = new System.Drawing.Point(191, 69);
             this.cboxSelectProject.Name = "cboxSelectProject";
             this.cboxSelectProject.Size = new System.Drawing.Size(230, 21);
             this.cboxSelectProject.TabIndex = 13;
+            this.cboxSelectProject.ValueMember = "ProjectName";
             // 
             // label7
             // 
@@ -134,6 +145,7 @@
             this.btnSave.TabIndex = 22;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // dateTimePicker1
             // 
@@ -154,6 +166,14 @@
             this.listBox1.Size = new System.Drawing.Size(132, 43);
             this.listBox1.TabIndex = 24;
             // 
+            // projectBindingSource
+            // 
+            this.projectBindingSource.DataSource = typeof(EntityClasses.Project);
+            // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataSource = typeof(EntityClasses.User);
+            // 
             // AddOrUpdateTask
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -173,6 +193,8 @@
             this.Controls.Add(this.label1);
             this.Name = "AddOrUpdateTask";
             this.Text = "AddOrUpdateTask";
+            ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,5 +214,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.BindingSource userBindingSource;
+        private System.Windows.Forms.BindingSource projectBindingSource;
     }
 }

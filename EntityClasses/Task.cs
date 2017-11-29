@@ -14,5 +14,7 @@ namespace EntityClasses
         public string TasksName { get; set; }
         public string TasksProjectName { get; set; }
         public string TasksAssignedUser { get; set; }
+        public DateTime dueDate { get; set; }
+        public string priority { get; set; }
     }
 }

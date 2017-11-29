@@ -16,5 +16,18 @@ namespace ProjectManagementTool
         {
             InitializeComponent();
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            string s1, s2, s3,s5;
+            DateTime s4;
+            s2 = cboxSelectResourcePerson.SelectedText;
+            s1 = cboxSelectProject.SelectedText;
+            s3 = txtDescription.Text;
+            s4 = dateTimePicker1.Value;
+            s5 = listBox1.Text;
+            BusinessLayer.AddOrUpdateTask.AddTask(s1,s2,s3,s4,s5);
+
+        }
     }
 }
