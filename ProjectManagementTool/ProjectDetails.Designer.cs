@@ -47,6 +47,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.projectBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.label11 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -57,11 +58,10 @@
             this.dueDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.taskBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtCreateTask = new System.Windows.Forms.LinkLabel();
-            this.projectBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.taskBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // txtDuration
@@ -225,6 +225,11 @@
             this.listBox1.TabIndex = 35;
             this.listBox1.ValueMember = "ProjectFilePath";
             // 
+            // projectBindingSource
+            // 
+            this.projectBindingSource.DataSource = typeof(EntityClasses.Project);
+            this.projectBindingSource.CurrentChanged += new System.EventHandler(this.projectBindingSource_CurrentChanged);
+            // 
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
@@ -309,11 +314,6 @@
             this.txtCreateTask.Text = "Create Task";
             this.txtCreateTask.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.txtCreateTask_LinkClicked);
             // 
-            // projectBindingSource
-            // 
-            this.projectBindingSource.DataSource = typeof(EntityClasses.Project);
-            this.projectBindingSource.CurrentChanged += new System.EventHandler(this.projectBindingSource_CurrentChanged);
-            // 
             // ProjectDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -343,10 +343,10 @@
             this.Controls.Add(this.label2);
             this.Name = "ProjectDetails";
             this.Text = "ProjectDetails";
+            ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.taskBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

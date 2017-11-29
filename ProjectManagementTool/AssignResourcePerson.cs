@@ -41,6 +41,7 @@ namespace ProjectManagementTool
             s2 = cboxSelectResourcePerson.SelectedText;
             BusinessLayer.AddResourcePerson.AddResource_Person(s1, s2,managerName);
             SetGridView();
+            MessageBox.Show("Added successfully");
         }
 
 

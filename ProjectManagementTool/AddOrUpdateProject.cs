@@ -109,10 +109,11 @@ namespace ProjectManagementTool
             {
                 s10 += part.Substring(0, 1);
             }
-            MessageBox.Show(s10);
+            
 
             BusinessLayer.AddOrUpdateProject.AddProject(s1,s10,s3,managerName,s7,s4,s5,s6,s8,s9);
-
+            MessageBox.Show("project Added Successfully");
+            Hide();
         }
     }
 }

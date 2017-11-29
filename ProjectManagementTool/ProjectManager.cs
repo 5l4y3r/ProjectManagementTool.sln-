@@ -12,7 +12,7 @@ namespace ProjectManagementTool
 {
     public partial class ProjectManager : Form
     {
-        static string managerName;
+        public string managerName;
         public ProjectManager()
         {
             InitializeComponent();
@@ -20,6 +20,7 @@ namespace ProjectManagementTool
 
         public ProjectManager(string name)
         {
+            lblManger.Text = name;
             managerName = name;
             InitializeComponent();
             
@@ -27,18 +28,22 @@ namespace ProjectManagementTool
 
         private void btnProject_Click(object sender, EventArgs e)
         {
-            Hide();
+            
             AddOrUpdateProject a1= new AddOrUpdateProject(managerName);
             a1.Show();
         }
 
         private void btnUser_Click(object sender, EventArgs e)
         {
-            Hide();
+            
             AssignResourcePerson a1 = new AssignResourcePerson(managerName);
             a1.Show();
         }
 
-        
+        private void btnProjectList_Click(object sender, EventArgs e)
+        {
+            ViewProjects v1 = new ViewProjects();
+            v1.Show();
+        }
     }
 }

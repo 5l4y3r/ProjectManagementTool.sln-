@@ -49,7 +49,7 @@ namespace ProjectManagementTool
             var con = new PmtContext();
             var tempo = con.Projects.SingleOrDefault(t => t.ProjectName == protectName) as Project;
             txtPName.Text = tempo.ProjectName;
-            txtCName.Text = "";
+            txtCName.Text = "00";
             txtDuration.Text = tempo.ProjectDuration.ToString();
             txtStatus.Text = tempo.ProjectStatus;
             txtPED.Text = tempo.ProjectPed.ToString();

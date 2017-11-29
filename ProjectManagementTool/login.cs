@@ -28,6 +28,7 @@ namespace ProjectManagementTool
             var con = new PmtContext();
 
             var userLogin = con.Users.SingleOrDefault(t => t.UserName == txtUserName.Text) as User;
+
             if (txtUserName.Text == "it" && txtPassword.Text == "it123")
             {
                 MessageBox.Show("IT Admin logged In Successfully");
@@ -40,10 +41,23 @@ namespace ProjectManagementTool
             else if (userLogin != null && userLogin.UserPassword == txtPassword.Text)
             {
                 string deg = userLogin.UserDesignation;
-                MessageBox.Show(deg+" logged In Successfully");
-                Hide();
-                AddOrUpdateProject a1= new AddOrUpdateProject(userLogin.UserName);
-                a1.Show();
+
+                if (deg == "Project Manager")
+                {
+                    Hide();
+                    ProjectManager p1 = new ProjectManager(userLogin.UserName);
+                    p1.Show();
+                }
+                else
+                {
+                    Hide();
+                    ViewProjects v1 = new ViewProjects();
+                    v1.Show();
+
+                }
+                MessageBox.Show(deg + " logged In Successfully");
+
+              
             }
             else
             {

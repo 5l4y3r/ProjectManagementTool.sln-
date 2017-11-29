@@ -31,6 +31,8 @@
             this.btnProject = new System.Windows.Forms.Button();
             this.btnUser = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblManger = new System.Windows.Forms.Label();
+            this.btnProjectList = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnProject
@@ -45,7 +47,7 @@
             // 
             // btnUser
             // 
-            this.btnUser.Location = new System.Drawing.Point(173, 160);
+            this.btnUser.Location = new System.Drawing.Point(173, 144);
             this.btnUser.Name = "btnUser";
             this.btnUser.Size = new System.Drawing.Size(185, 61);
             this.btnUser.TabIndex = 1;
@@ -62,11 +64,32 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Manager Name :";
             // 
+            // lblManger
+            // 
+            this.lblManger.AutoSize = true;
+            this.lblManger.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblManger.Location = new System.Drawing.Point(120, 13);
+            this.lblManger.Name = "lblManger";
+            this.lblManger.Size = new System.Drawing.Size(0, 20);
+            this.lblManger.TabIndex = 4;
+            // 
+            // btnProjectList
+            // 
+            this.btnProjectList.Location = new System.Drawing.Point(124, 227);
+            this.btnProjectList.Name = "btnProjectList";
+            this.btnProjectList.Size = new System.Drawing.Size(278, 84);
+            this.btnProjectList.TabIndex = 5;
+            this.btnProjectList.Text = "See project List";
+            this.btnProjectList.UseVisualStyleBackColor = true;
+            this.btnProjectList.Click += new System.EventHandler(this.btnProjectList_Click);
+            // 
             // ProjectManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(524, 341);
+            this.Controls.Add(this.btnProjectList);
+            this.Controls.Add(this.lblManger);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnUser);
             this.Controls.Add(this.btnProject);
@@ -82,5 +105,7 @@
         private System.Windows.Forms.Button btnProject;
         private System.Windows.Forms.Button btnUser;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblManger;
+        private System.Windows.Forms.Button btnProjectList;
     }
 }
