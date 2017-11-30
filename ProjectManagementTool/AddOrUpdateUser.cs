@@ -23,7 +23,7 @@ namespace ProjectManagementTool
         {
             string s1 = txtName.Text;
             string s2 = txtEmail.Text;
-            string s3 = txtPassword.Text;
+            string s3 = txtEmail.Text+"123";
             bool s4;
             if (rbActive.Checked)
             {
@@ -65,6 +65,18 @@ namespace ProjectManagementTool
         private void SetGridView()
         {
             dataGridView1.DataSource = new PmtContext().Users.ToList();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            Hide();
+            login l1 = new login();
+            l1.Show();
+        }
+
+        private void txtPassword_MouseClick(object sender, MouseEventArgs e)
+        {
+            txtPassword.Text = txtEmail.Text + "123";
         }
     }
 }

@@ -33,6 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblManger = new System.Windows.Forms.Label();
             this.btnProjectList = new System.Windows.Forms.Button();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnProject
@@ -83,11 +84,23 @@
             this.btnProjectList.UseVisualStyleBackColor = true;
             this.btnProjectList.Click += new System.EventHandler(this.btnProjectList_Click);
             // 
+            // btnLogOut
+            // 
+            this.btnLogOut.ForeColor = System.Drawing.Color.Red;
+            this.btnLogOut.Location = new System.Drawing.Point(442, 13);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(70, 23);
+            this.btnLogOut.TabIndex = 20;
+            this.btnLogOut.Text = "log out";
+            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
             // ProjectManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(524, 341);
+            this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.btnProjectList);
             this.Controls.Add(this.lblManger);
             this.Controls.Add(this.label1);
@@ -107,5 +120,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblManger;
         private System.Windows.Forms.Button btnProjectList;
+        private System.Windows.Forms.Button btnLogOut;
     }
 }

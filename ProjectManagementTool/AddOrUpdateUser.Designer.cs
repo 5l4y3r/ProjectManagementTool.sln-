@@ -48,12 +48,13 @@ namespace ProjectManagementTool
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.userNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userEmailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userPasswordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userStatusDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.userDesignationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -62,6 +63,7 @@ namespace ProjectManagementTool
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnLogOut);
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.listBox1);
             this.panel1.Controls.Add(this.rbInactive);
@@ -136,6 +138,7 @@ namespace ProjectManagementTool
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(276, 20);
             this.txtPassword.TabIndex = 14;
+            this.txtPassword.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPassword_MouseClick);
             // 
             // txtEmail
             // 
@@ -236,10 +239,6 @@ namespace ProjectManagementTool
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // userBindingSource
-            // 
-            this.userBindingSource.DataSource = typeof(EntityClasses.User);
-            // 
             // userNameDataGridViewTextBoxColumn
             // 
             this.userNameDataGridViewTextBoxColumn.DataPropertyName = "UserName";
@@ -269,6 +268,21 @@ namespace ProjectManagementTool
             this.userDesignationDataGridViewTextBoxColumn.DataPropertyName = "UserDesignation";
             this.userDesignationDataGridViewTextBoxColumn.HeaderText = "UserDesignation";
             this.userDesignationDataGridViewTextBoxColumn.Name = "userDesignationDataGridViewTextBoxColumn";
+            // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataSource = typeof(EntityClasses.User);
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.ForeColor = System.Drawing.Color.Red;
+            this.btnLogOut.Location = new System.Drawing.Point(28, 24);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(70, 23);
+            this.btnLogOut.TabIndex = 19;
+            this.btnLogOut.Text = "log out";
+            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // AddOrUpdateUser
             // 
@@ -312,5 +326,6 @@ namespace ProjectManagementTool
         private System.Windows.Forms.DataGridViewCheckBoxColumn userStatusDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn userDesignationDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource userBindingSource;
+        private System.Windows.Forms.Button btnLogOut;
     }
 }

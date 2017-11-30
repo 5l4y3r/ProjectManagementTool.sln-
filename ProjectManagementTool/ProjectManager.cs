@@ -45,5 +45,12 @@ namespace ProjectManagementTool
             ViewProjects v1 = new ViewProjects(managerName);
             v1.Show();
         }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            Hide();
+            login a1 = new login();
+            a1.Show();
+        }
     }
 }
