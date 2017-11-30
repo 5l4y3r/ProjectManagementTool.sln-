@@ -20,10 +20,10 @@ namespace ProjectManagementTool
 
         public ProjectManager(string name)
         {
-            lblManger.Text = name;
+            
             managerName = name;
             InitializeComponent();
-            
+            lblManger.Text = managerName;
         }
 
         private void btnProject_Click(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace ProjectManagementTool
 
         private void btnProjectList_Click(object sender, EventArgs e)
         {
-            ViewProjects v1 = new ViewProjects();
+            ViewProjects v1 = new ViewProjects(managerName);
             v1.Show();
         }
     }

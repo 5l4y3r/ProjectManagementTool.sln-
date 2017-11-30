@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.projectBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.projectNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.projectShortNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.projectDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,6 +39,7 @@
             this.projectPedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.projectDurationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.projectStatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.projectBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cboxSelectProject = new System.Windows.Forms.ComboBox();
             this.btnDetails = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -83,11 +83,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(602, 254);
             this.dataGridView1.TabIndex = 0;
             // 
-            // projectBindingSource
-            // 
-            this.projectBindingSource.DataSource = typeof(EntityClasses.Project);
-            this.projectBindingSource.CurrentChanged += new System.EventHandler(this.projectBindingSource_CurrentChanged);
-            // 
             // projectNameDataGridViewTextBoxColumn
             // 
             this.projectNameDataGridViewTextBoxColumn.DataPropertyName = "ProjectName";
@@ -130,6 +125,11 @@
             this.projectStatusDataGridViewTextBoxColumn.HeaderText = "Status";
             this.projectStatusDataGridViewTextBoxColumn.Name = "projectStatusDataGridViewTextBoxColumn";
             // 
+            // projectBindingSource
+            // 
+            this.projectBindingSource.DataSource = typeof(EntityClasses.Project);
+            this.projectBindingSource.CurrentChanged += new System.EventHandler(this.projectBindingSource_CurrentChanged);
+            // 
             // cboxSelectProject
             // 
             this.cboxSelectProject.DataSource = this.projectBindingSource;
@@ -140,6 +140,7 @@
             this.cboxSelectProject.Size = new System.Drawing.Size(385, 21);
             this.cboxSelectProject.TabIndex = 10;
             this.cboxSelectProject.ValueMember = "ProjectName";
+            this.cboxSelectProject.SelectedIndexChanged += new System.EventHandler(this.cboxSelectProject_SelectedIndexChanged);
             // 
             // btnDetails
             // 

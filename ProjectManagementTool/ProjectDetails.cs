@@ -14,7 +14,7 @@ namespace ProjectManagementTool
     public partial class ProjectDetails : Form
     {
 
-        string protectName;
+        string projectName;
         public ProjectDetails()
         {
             InitializeComponent();
@@ -23,13 +23,15 @@ namespace ProjectManagementTool
         }
         public ProjectDetails(string s1)
         {
+            MessageBox.Show(s1);
             var con = new PmtContext();
 
-            projectBindingSource.DataSource = con.Projects.SingleOrDefault(t => t.ProjectName == s1) as Project;
-
-            taskBindingSource.DataSource = con.Projects.SingleOrDefault(t => t.ProjectName == s1) as Project;
-            protectName = s1;
             InitializeComponent();
+            projectBindingSource.DataSource = con.Projects.ToList().Where(t => t.ProjectName == s1);
+
+            taskBindingSource.DataSource = con.Tasks.ToList().Where(t => t.TasksProjectName == s1);
+            projectName = s1;
+            
             SetGridView();
         }
         private void txtCreateTask_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -41,20 +43,14 @@ namespace ProjectManagementTool
 
         private void SetGridView()
         {
-            dataGridView1.DataSource = new PmtContext().Tasks.ToList();
+            dataGridView1.DataSource = taskBindingSource;
         }
 
         private void setProjectDetails()
         {
-            var con = new PmtContext();
-            var tempo = con.Projects.SingleOrDefault(t => t.ProjectName == protectName) as Project;
-            txtPName.Text = tempo.ProjectName;
-            txtCName.Text = "00";
-            txtDuration.Text = tempo.ProjectDuration.ToString();
-            txtStatus.Text = tempo.ProjectStatus;
-            txtPED.Text = tempo.ProjectPed.ToString();
-            txtDesc.Text = tempo.ProjectDescription; 
-            txtDuration.Text =tempo.ProjectDuration.ToString();
+            
+         
+           
         }
 
         private void taskBindingSource_CurrentChanged(object sender, EventArgs e)
@@ -65,6 +61,11 @@ namespace ProjectManagementTool
         private void projectBindingSource_CurrentChanged(object sender, EventArgs e)
         {
            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SetGridView();
         }
     }
 }

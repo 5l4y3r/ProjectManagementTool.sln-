@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.txtDuration = new System.Windows.Forms.TextBox();
-            this.txtStatus = new System.Windows.Forms.TextBox();
-            this.txtPED = new System.Windows.Forms.TextBox();
-            this.txtDesc = new System.Windows.Forms.TextBox();
-            this.txtCName = new System.Windows.Forms.TextBox();
-            this.txtPName = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -43,7 +37,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtPSD = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -58,54 +51,19 @@
             this.dueDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.taskBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtCreateTask = new System.Windows.Forms.LinkLabel();
+            this.txtPName = new System.Windows.Forms.ListBox();
+            this.txtCName = new System.Windows.Forms.ListBox();
+            this.txtDesc = new System.Windows.Forms.ListBox();
+            this.txtStatus = new System.Windows.Forms.ListBox();
+            this.txtPSD = new System.Windows.Forms.ListBox();
+            this.txtPED = new System.Windows.Forms.ListBox();
+            this.txtDuration = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.projectBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.taskBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txtDuration
-            // 
-            this.txtDuration.Location = new System.Drawing.Point(129, 249);
-            this.txtDuration.Name = "txtDuration";
-            this.txtDuration.Size = new System.Drawing.Size(141, 20);
-            this.txtDuration.TabIndex = 29;
-            // 
-            // txtStatus
-            // 
-            this.txtStatus.Location = new System.Drawing.Point(129, 163);
-            this.txtStatus.Name = "txtStatus";
-            this.txtStatus.Size = new System.Drawing.Size(219, 20);
-            this.txtStatus.TabIndex = 28;
-            // 
-            // txtPED
-            // 
-            this.txtPED.Location = new System.Drawing.Point(129, 219);
-            this.txtPED.Name = "txtPED";
-            this.txtPED.Size = new System.Drawing.Size(219, 20);
-            this.txtPED.TabIndex = 27;
-            // 
-            // txtDesc
-            // 
-            this.txtDesc.Location = new System.Drawing.Point(129, 108);
-            this.txtDesc.Multiline = true;
-            this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(219, 46);
-            this.txtDesc.TabIndex = 26;
-            // 
-            // txtCName
-            // 
-            this.txtCName.Location = new System.Drawing.Point(129, 78);
-            this.txtCName.Name = "txtCName";
-            this.txtCName.Size = new System.Drawing.Size(219, 20);
-            this.txtCName.TabIndex = 24;
-            // 
-            // txtPName
-            // 
-            this.txtPName.Location = new System.Drawing.Point(129, 49);
-            this.txtPName.Name = "txtPName";
-            this.txtPName.Size = new System.Drawing.Size(219, 20);
-            this.txtPName.TabIndex = 23;
             // 
             // label9
             // 
@@ -186,13 +144,6 @@
             this.label1.Size = new System.Drawing.Size(219, 33);
             this.label1.TabIndex = 30;
             this.label1.Text = "Project Details";
-            // 
-            // txtPSD
-            // 
-            this.txtPSD.Location = new System.Drawing.Point(129, 190);
-            this.txtPSD.Name = "txtPSD";
-            this.txtPSD.Size = new System.Drawing.Size(219, 20);
-            this.txtPSD.TabIndex = 32;
             // 
             // label8
             // 
@@ -314,11 +265,103 @@
             this.txtCreateTask.Text = "Create Task";
             this.txtCreateTask.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.txtCreateTask_LinkClicked);
             // 
+            // txtPName
+            // 
+            this.txtPName.DataSource = this.projectBindingSource;
+            this.txtPName.DisplayMember = "ProjectName";
+            this.txtPName.FormattingEnabled = true;
+            this.txtPName.Location = new System.Drawing.Point(129, 52);
+            this.txtPName.Name = "txtPName";
+            this.txtPName.Size = new System.Drawing.Size(219, 17);
+            this.txtPName.TabIndex = 41;
+            this.txtPName.ValueMember = "ProjectName";
+            // 
+            // txtCName
+            // 
+            this.txtCName.FormattingEnabled = true;
+            this.txtCName.Location = new System.Drawing.Point(129, 81);
+            this.txtCName.Name = "txtCName";
+            this.txtCName.Size = new System.Drawing.Size(219, 17);
+            this.txtCName.TabIndex = 42;
+            // 
+            // txtDesc
+            // 
+            this.txtDesc.DataSource = this.projectBindingSource;
+            this.txtDesc.DisplayMember = "ProjectDescription";
+            this.txtDesc.FormattingEnabled = true;
+            this.txtDesc.Location = new System.Drawing.Point(129, 114);
+            this.txtDesc.Name = "txtDesc";
+            this.txtDesc.Size = new System.Drawing.Size(219, 17);
+            this.txtDesc.TabIndex = 43;
+            this.txtDesc.ValueMember = "ProjectDescription";
+            // 
+            // txtStatus
+            // 
+            this.txtStatus.DataSource = this.projectBindingSource;
+            this.txtStatus.DisplayMember = "ProjectStatus";
+            this.txtStatus.FormattingEnabled = true;
+            this.txtStatus.Location = new System.Drawing.Point(129, 163);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.Size = new System.Drawing.Size(219, 17);
+            this.txtStatus.TabIndex = 44;
+            this.txtStatus.ValueMember = "ProjectStatus";
+            // 
+            // txtPSD
+            // 
+            this.txtPSD.DataSource = this.projectBindingSource;
+            this.txtPSD.DisplayMember = "ProjectPed";
+            this.txtPSD.FormattingEnabled = true;
+            this.txtPSD.Location = new System.Drawing.Point(129, 190);
+            this.txtPSD.Name = "txtPSD";
+            this.txtPSD.Size = new System.Drawing.Size(219, 17);
+            this.txtPSD.TabIndex = 45;
+            this.txtPSD.ValueMember = "ProjectPed";
+            // 
+            // txtPED
+            // 
+            this.txtPED.DataSource = this.projectBindingSource;
+            this.txtPED.DisplayMember = "ProjectPed";
+            this.txtPED.FormattingEnabled = true;
+            this.txtPED.Location = new System.Drawing.Point(129, 219);
+            this.txtPED.Name = "txtPED";
+            this.txtPED.Size = new System.Drawing.Size(219, 17);
+            this.txtPED.TabIndex = 46;
+            this.txtPED.ValueMember = "ProjectPed";
+            // 
+            // txtDuration
+            // 
+            this.txtDuration.DataSource = this.projectBindingSource;
+            this.txtDuration.DisplayMember = "ProjectDuration";
+            this.txtDuration.FormattingEnabled = true;
+            this.txtDuration.Location = new System.Drawing.Point(129, 249);
+            this.txtDuration.Name = "txtDuration";
+            this.txtDuration.Size = new System.Drawing.Size(219, 17);
+            this.txtDuration.TabIndex = 47;
+            this.txtDuration.ValueMember = "ProjectDuration";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(740, 319);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 48;
+            this.button1.Text = "reload tasks";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ProjectDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(840, 436);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtDuration);
+            this.Controls.Add(this.txtPED);
+            this.Controls.Add(this.txtPSD);
+            this.Controls.Add(this.txtStatus);
+            this.Controls.Add(this.txtDesc);
+            this.Controls.Add(this.txtCName);
+            this.Controls.Add(this.txtPName);
             this.Controls.Add(this.txtCreateTask);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label11);
@@ -326,14 +369,7 @@
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtPSD);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtDuration);
-            this.Controls.Add(this.txtStatus);
-            this.Controls.Add(this.txtPED);
-            this.Controls.Add(this.txtDesc);
-            this.Controls.Add(this.txtCName);
-            this.Controls.Add(this.txtPName);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -353,13 +389,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtDuration;
-        private System.Windows.Forms.TextBox txtStatus;
-        private System.Windows.Forms.TextBox txtPED;
-        private System.Windows.Forms.TextBox txtDesc;
-        private System.Windows.Forms.TextBox txtCName;
-        private System.Windows.Forms.TextBox txtPName;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -368,7 +397,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtPSD;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ListBox listBox1;
@@ -383,5 +411,13 @@
         private System.Windows.Forms.BindingSource taskBindingSource;
         private System.Windows.Forms.LinkLabel txtCreateTask;
         private System.Windows.Forms.BindingSource projectBindingSource;
+        private System.Windows.Forms.ListBox txtPName;
+        private System.Windows.Forms.ListBox txtCName;
+        private System.Windows.Forms.ListBox txtDesc;
+        private System.Windows.Forms.ListBox txtStatus;
+        private System.Windows.Forms.ListBox txtPSD;
+        private System.Windows.Forms.ListBox txtPED;
+        private System.Windows.Forms.ListBox txtDuration;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -37,8 +37,8 @@ namespace ProjectManagementTool
         private void btnSave_Click(object sender, EventArgs e)
         {
             string s1, s2;
-            s1 = cboxSelectProject.SelectedText;
-            s2 = cboxSelectResourcePerson.SelectedText;
+            s2 = cboxSelectProject.Text;
+            s1 = cboxSelectResourcePerson.Text;
             BusinessLayer.AddResourcePerson.AddResource_Person(s1, s2,managerName);
             SetGridView();
             MessageBox.Show("Added successfully");

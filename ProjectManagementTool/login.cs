@@ -51,7 +51,7 @@ namespace ProjectManagementTool
                 else
                 {
                     Hide();
-                    ViewProjects v1 = new ViewProjects();
+                    ViewProjects v1 = new ViewProjects(userLogin.UserName);
                     v1.Show();
 
                 }

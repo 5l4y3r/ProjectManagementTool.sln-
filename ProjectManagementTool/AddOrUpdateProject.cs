@@ -14,6 +14,12 @@ namespace ProjectManagementTool
     public partial class AddOrUpdateProject : Form
     {
        public static string managerName;
+        public AddOrUpdateProject()
+        {
+          
+            InitializeComponent();
+
+        }
         public AddOrUpdateProject(string s)
         {
             managerName = s;
